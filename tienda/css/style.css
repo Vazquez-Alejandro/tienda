@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+
+:root {
+  --background-color: #111111;
+  --primary-color: #c7a17a;
+  --links-color: rgb(177, 177, 177);
+  font-family: "Lato";
+}
+
+body{
+    margin: 0;
+}
+
+footer{
+    background-color: var(--background-color);
+    display: flex;
+    margin: 0;
+    padding: 3em;
+}
+
+footer div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    margin-top: 5vh;
+    width: 14%;
+}
+
+footer h4{
+    color: var(--primary-color);
+    font-family: "Oswald";
+    font-weight: 600;
+    margin-top: 0;
+}
+
+footer a{
+    text-decoration: none;
+    color: var(--links-color);
+    margin-bottom: 1.1em;
+    font-size: .9em;
+}
+
+footer a:hover{
+    color: white;
+}
+
+.text-align-center{
+    text-align: center;
+}
+
+footer .text-align-center{
+    width: 30%;
+}
+
+footer input{
+    border: solid 1px var(--links-color);
+    border-radius: 5px;
+    background-color: var(--background-color);
+    margin-top: 8px;
+    padding: 12px;
+}
+
+footer .btn{
+    background-color: var(--primary-color);
+    border:0;
+    border-radius: 5px;
+    color: var(--background-color);
+    font-family: "Lato";
+    font-weight: 600;
+    width: 10vw;
+    height: 6vh;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+}
+
+.logo-div{
+    width: 30vw;
+}
+
+.logo-footer{
+    width: 10vw;
+    height: auto;  
+}
+
+.social-footer{
+    width: 2vw;
+    height: auto;
+    margin: 5px;
+    margin-top: 0;
+}
+
+.copyright{
+    border-top: solid 1px var(--links-color);
+    background-color: var(--background-color);
+    color: var(--links-color);
+    padding: 1.5em;
+    margin: 0;
+}
+
+.copyright p{
+    margin-top: 3px;
+    margin-bottom: 0;
+    font-size: .7em;
+}
+
+
+@media (max-width: 992px) {
+
+    footer{
+        flex-wrap: wrap;
+    }
+
+    footer h4{
+        font-size: small;
+    }
+
+    footer a{
+        font-size: small;
+    }
+
+    .logo-footer{
+        width: 18vw;
+    }
+
+    .logo-div{
+        width: 70%;
+        margin-left: 0;
+    }
+
+    footer div{
+        width: 40%;
+        margin-left: 0;
+    }
+
+    footer .text-align-center{
+        width: 62%;
+        margin: auto;
+        margin-top: 7vh;
+    }
+
+    footer input{
+        margin-top: 5px;
+    }
+
+    footer .btn{
+        width: 25vw;
+        font-size: .7em;
+        margin-top: 5px;
+    }
+
+    .social-footer{
+        width: 4vw;
+        margin: 3px;
+    }
+    
+    .copyright{
+        padding: 1em;
+    }
+
+    .copyright p{
+        margin-top: 0;
+        font-size: .6em;
+    }
+
+}
