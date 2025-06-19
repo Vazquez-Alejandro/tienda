@@ -1,33 +1,70 @@
-/* Estilos generales del navbar */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+
+:root {
+  --background-color: #111111;
+  --primary-color: #c7a17a;
+  --links-color: rgb(177, 177, 177);
+  font-family: "Lato";
+}
+
+body{
+    margin: 0;
+}
+
+/* --- Estilos generales del navbar --- */
+.pre-navbar {
+    height: 30px;
+    background-color: black;
+    border-bottom: 1px solid #5e5e5e;
+    width: 100%;
+}
+
 .navbar {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
-    background-color: #111111;
     padding: 15px 20px;
-    position: fixed;
     width: 100%;
+    background-color: rgb(0, 0, 0);
+    z-index: 999;
+    transition: top 1s ease-in-out;
+    position: relative;
     top: 0;
-    left: 0;
-    z-index: 1001;
+    transition: top 0.6s ease-in-out;
 }
 
-/* Logo centrado */
-.logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+.navbar.fixed {
+  position: fixed;
+  top: -80px;
+  animation: slideDown 0.6s ease forwards;
+  height: 12vh;
+}
+  
+.navbar.transparent {
+    background-color: transparent;
+}
+  
+.navbar.solid {
+    background-color: rgb(0, 0, 0);
 }
 
-.logo-navbar {
-    height: 50px;
+.logo-navbar{
+    height: 80% !important;
     width: auto;
+    margin-left: 18px !important;
+    margin-right: 5vw;
 }
 
-/* Botón hamburguesa */
+.vh-page-navbar-solid{
+    height: 22vh;
+}
+
+/* --- Botón hamburguesa --- */
 .menu-toggle {
     color: white;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     width: 24px;
@@ -54,46 +91,39 @@
     width: 60%;
 }
 
-/* Menú desplegable */
+/* --- Menú links (modo desktop por defecto) --- */
 .nav-links {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 25%;
-    height: 100vh;
-    background: #fff;
-    padding-top: 0;  /* para que no quede detrás del navbar */
-    padding-left: 15px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    z-index: 999; /* Asegura que quede arriba de todo */
-}
-.nav-links.active {
     display: flex;
+    position: static;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: end;
+    background: none;
+    height: auto;
+    width: auto;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    z-index: auto;
 }
-
 
 .nav-links li {
     list-style: none;
-    margin: 20px 0;
+    margin: 0 10px;
+    border-bottom: none;
+    padding-bottom: 0;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #333;
-    font-size: 18px;
-    display: block;
+    color: whitesmoke;
+    font-family: "Oswald";
+    font-size:.95em;
+    font-weight: 400;
+    padding-left: 0;
 }
 
-/* Mostrar menú con clase activa */
-.nav-open .nav-links {
-    left: 0;
-}
-
-/* Overlay oscuro */
+/* --- Overlay oscuro --- */
 .overlay {
     position: fixed;
     top: 0;
@@ -112,6 +142,362 @@
     pointer-events: auto;
 }
 
-.menu-toggle.hidden {
-    display: none;
+
+/* --- Estilos Generales de Carrusel --- */
+.carousel-indicators {
+    list-style: none;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 10%;
+    left: 0%;
+    transform: none;
+    text-align: left;
+    width: 40%;
+    padding: 20px 40px;
+    border-radius: 8px;
+    color: white;
+    box-sizing: border-box;
+}
+
+/* --- Estilos específicos para el primer carrusel (BANNERS) --- */
+#mainCarousel .carousel-caption .carousel-highlighted-text {
+    font-size: 5em;
+    font-weight: bold;
+    line-height: 1;
+    color: white;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.carousel-custom-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 40px;
+  padding: 10px 28px;
+  border: 1px solid white;
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background-color: transparent;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.carousel-custom-btn:hover {
+  border-color: #d1d1d1; 
+  color: #eaeaea;
+}
+
+/* --- Estilos específicos para el segundo carrusel (PRODUCTOS) --- */
+/* --- Estilos para el título "NUESTROS PRODUCTOS" --- */
+.products-section-title {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.products-section-title h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.title-underline {
+    width: 180px;
+    height: 2px;
+    background-color: #d4a572;
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+/* Estilo para el contenedor de las 4 imágenes dentro de cada slide */
+#productCarousel .carousel-item-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px 0;
+    flex-wrap: nowrap;
+}
+
+/* Estilo para cada item individual de producto (imagen + texto) */
+.product-item {
+    text-align: center;
+    padding: 10px;
+    margin: 0 10px;
+    width: 23%;
+    box-sizing: border-box;
+    transition: transform 0.3s ease; /* Transición para el efecto de elevación */
+}
+
+/* Estilo para el enlace que envuelve la imagen y el texto */
+.product-item a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    cursor: pointer;
+}
+
+/* Estilo para la imagen del producto (frontal) */
+.product-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para el nombre del producto debajo de la imagen */
+.product-item p {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* --- Estilos para el efecto HOVER de imágenes en el carrusel de productos --- */
+
+.product-item .image-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* Para proporción cuadrada. Ajusta si tus imágenes tienen otra proporción */
+    height: 0;
+    overflow: hidden;
+}
+
+.product-item .image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.5s ease-in-out;
+    backface-visibility: hidden;
+}
+
+.product-item .image-container .product-img-front {
+    opacity: 1;
+    z-index: 2;
+}
+
+.product-item .image-container .product-img-back {
+    opacity: 0;
+    z-index: 1;
+}
+
+/* Efecto al pasar el ratón sobre el product-item */
+.product-item:hover .image-container .product-img-front {
+    opacity: 0;
+}
+
+.product-item:hover .image-container .product-img-back {
+    opacity: 1;
+}
+
+/* Efecto de elevación al pasar el ratón sobre el item completo */
+.product-item:hover {
+    transform: translateY(-5px);
+}
+
+/* --- Ajustes de estilo para los indicadores (puntos) de Bootstrap --- */
+#mainCarousel .carousel-indicators [data-bs-target],
+#productCarousel .carousel-indicators [data-bs-target] {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #bbb;
+    opacity: 1;
+    margin: 0 5px;
+    border: none;
+}
+
+#mainCarousel .carousel-indicators .active,
+#productCarousel .carousel-indicators .active {
+    background-color: #555;
+}
+
+/* --- Estilos para la sección de Experiencias/Platos --- */
+.experiences-section {
+    background-color: #fff;
+    padding: 60px 0;
+}
+
+.experience-card {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: inherit;
+}
+
+.experience-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 50%);
+    z-index: 1;
+}
+
+.experience-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease-out;
+    filter: brightness(0.9);
+}
+
+.experience-card:hover .experience-img {
+    transform: scale(1.05);
+    filter: brightness(0.8);
+}
+
+.experience-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    color: #fff;
+    z-index: 2;
+}
+
+.experience-subtitle {
+    font-size: 1em;
+    margin-bottom: 5px;
+    opacity: 0.9;
+}
+
+.experience-title {
+    font-family: "Oswald", sans-serif;
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    line-height: 1.1;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.experience-btn {
+    display: inline-block;
+    padding: 8px 25px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.experience-card:hover .experience-btn {
+    background-color: #fff;
+    color: var(--primary-color);
+}
+
+/* --- Media Queries para responsividad de Experiencias/Platos --- */
+@media (max-width: 767.98px) {
+    .experience-title {
+        font-size: 1.8em;
+    }
+    .experience-subtitle {
+        font-size: 0.9em;
+    }
+    .experience-content {
+        bottom: 15px;
+        left: 15px;
+        right: 15px;
+    }
+    .experience-btn {
+        padding: 6px 20px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .experience-card {
+        margin-bottom: 20px;
+    }
+    .experience-title {
+        font-size: 1.6em;
+    }
+}
+
+/* --- Estilos para la sección "¿CUÁL VAS A ELEGIR HOY?" --- */
+/* Sección general */
+.coffee-choice-section {
+  background-color: #f9f9f9;
+  padding-bottom: 60px;
+}
+
+/* Fila principal con imagen centrada y textos alineados */
+.coffee-choice-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* Textos laterales */
+.coffee-grid-item {
+  flex: 1 1 300px;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 350px;
+}
+
+.coffee-grid-item h3 {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.8em;
+  color: #333;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.coffee-grid-item p {
+  font-size: 0.9em;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Imagen central */
+.coffee-grid-center-image {
+  flex: 1 1 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.coffee-grid-center-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsivo */
+@media (max-width: 767.98px) {
+  .coffee-choice-flex {
+    flex-direction: column;
+  }
+
+  .coffee-grid-item {
+    text-align: center;
+  }
+
+  .coffee-grid-center-image {
+    order: -1;
+    margin-bottom: 20px;
+  }
 }

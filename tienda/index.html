@@ -1,76 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/style.css">
-    
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+  <link rel="icon" type="image/x-icon" href="assets/tienda-de-cafe.png">
+  <title>Alejandro Home - Tienda de café</title>
 </head>
+
 <body>
 
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <img src="assets/tienda-de-cafe.png" alt="" class="logo-navbar">
-            </div>
-            <button class="menu-toggle" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Nuestro Café</a></li>
-                <li><a href="#">Tutoriales</a></li>
-                <li><a href="#">Nuestro Menú</a></li>
-                <li><a href="#">Trabajá con Nosotros</a></li>
-                <li><a href="#">Franquicias</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-        </nav>
+  <header>
+    <div class="pre-navbar"></div>
+    <nav class="navbar solid">
+      <button class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="logo-nav-mobile">
+        <img src="/assets/tienda-de-cafe.png" alt="" class="logo-navbar">
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#"> INICIO</a></li>
+        <li><a href="#"> NUESTRO CAFÉ</a></li>
+        <li><a href="#"> TUTORIALES</a></li>
+        <li><a href="#"> NUESTRO MENÚ</a></li>
+        <li><a href="#"> TRABAJÁ CON NOSOTROS</a></li>
+        <li><a href="#"> FRANQUICIAS</a></li>
+        <li><a href="#"> CONTACTO</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    </header>
+  <main>
 
+    <div id="mainCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <div class="carousel-indicators" id="mainCarouselIndicators">
+      </div>
 
-    <footer>
-        
-        <div class="logo-div"><img src="assets/tienda-de-cafe.png" alt="" class="logo-footer"></div>
+      <div class="carousel-inner" id="mainCarouselInner">
+      </div>
 
-        <div>
-            <h4>CONTENIDOS</h4>
-            <a href="#home">Inicio</a>
-            <a href="">Nuestro Café</a>
-            <a href="">Locales</a>
-            <a href="">Nuestro Menú</a>
+      <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
+    </div>
+
+    <section class="container my-5">
+      <div class="products-section-title">
+        <h2>NUESTROS PRODUCTOS</h2>
+        <div class="title-underline"></div>
+      </div>
+      <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-indicators" id="productCarouselIndicators">
         </div>
 
-        <div>
-            <h4>NECESITÁS AYUDA</h4>
-            <a href="">Tutoriales</a>
-            <a href="">Trabajá en TDC</a>
-            <a href="">Franquicias</a>
-            <a href="">Contacto</a>
+        <div class="carousel-inner" id="productCarouselInner">
         </div>
 
-        <div class="text-align-center">
-            <h4>¡SUSCRIBITE PARA RECIBIR DESCUENTOS Y NOVEDADES EXCLUSIVAS</h4>
-            <input type="text" name="" placeholder="Tu nombre" id="name-form">
-            <input type="email" name="" placeholder="Tu email" id="mail-form">
-            <button class="btn">SUSCRIBIRME</button>
-            <form action="">
-            <h4>CONECTATE CON NOSOTROS</h4>
-            <a href="facebook.com"><img src="assets/facebook_2.png" alt="Logo y link a facebook"class = "social-footer" ></a>
-            <a href="instagram.com"><img src="assets/instagram_2.png" alt="Logo y link a Instagram" class = "social-footer"></a>
-            </form>
+        <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span> </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span> </button>
+      </div>
+    </section>
+    <section class="experiences-section py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <a href="#" class="experience-card">
+              <img src="assets/bannerpromo_cafe_02_v2.jpg" alt="Secretos del Barista" class="img-fluid experience-img">
+              <div class="experience-content">
+                <p class="experience-subtitle">Aprendé a hacer tu café como un experto</p>
+                <h3 class="experience-title">SECRETOS DEL BARISTA</h3>
+                <span class="experience-btn">VER</span>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 mb-4">
+            <a href="#" class="experience-card">
+              <img src="assets/TIENDA-042400313-1-scaled-760x420.jpg" alt="Nuestros Platos"
+                class="img-fluid experience-img">
+              <div class="experience-content">
+                <p class="experience-subtitle">Conocé todo lo que podés encontrar en nuestros locales</p>
+                <h3 class="experience-title">NUESTROS PLATOS</h3>
+                <span class="experience-btn">VER</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container my-5 coffee-choice-section">
+      <div class="products-section-title">
+        <h2>¿CUÁL VAS A ELEGIR HOY?</h2>
+        <div class="title-underline"></div>
+      </div>
+
+      <div class="coffee-choice-flex">
+        <div class="coffee-grid-item text-end">
+          <h3>BARISTA</h3>
+          <p>Nuestro tradicional house blend, el hijo pródigo de la casa. Granos provenientes de Brasil, nos permiten
+            obtener este café pleno, de cuerpo medio, sin acidez ni amargor. Si lo vas a tomar en tu casa, te vas a
+            sentir bien cerca de TIENDA.</p>
         </div>
 
-    </footer>
-        <div class="copyright">
-            <p>© Copyright 2021 Tienda de café - Todos los derechos reservados.</p>
-            <p>Todos los logos, productos, marcas y nombres aqui utilizados son propiedad registrada.</p>
+        <div class="coffee-grid-center-image">
+          <img src="assets/packhome_01-768x634.jpg" alt="Café sirviéndose" class="img-fluid">
         </div>
-    <script src="js/index.js"></script>
+
+        <div class="coffee-grid-item text-start">
+          <h3>COLOMBIA</h3>
+          <p>Nuestro varietal clásico. Adentrate en las regiones colombianas con este café de cuerpo suave, gusto
+            frutado, aroma floral y una delicada acidez. Inconfundible.</p>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mt-5">
+        <div class="col-md-3 offset-md-3 coffee-grid-item text-end">
+          <h3>SCEGLIERE</h3>
+          <p>Una combinación única, lograda por la mezcla exacta de los granos adecuados. Con sabor balanceado y
+            agradable retrogusto, ideal para disfrutar a cualquier hora del día.</p>
+        </div>
+        <div class="col-md-3 coffee-grid-item text-start">
+          <h3>DESCAFEINADO</h3>
+          <p>Si querés disfrutar un exquisito café, pero reducir tu dosis diaria de cafeína, este es tu blend. Café
+            originario de Brasil, con un sabor suave, redondo, aroma tenue y delicioso. No renuncies al placer de una
+            buena taza de café.</p>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mt-4">
+        <div class="col-md-3 offset-md-3 coffee-grid-item text-end">
+          <h3>BRASIL</h3>
+          <p>Un café de cuerpo suave, y baja acidez hacen de BRASIL el ideal para tus preparaciones de café filtrado.
+          </p>
+        </div>
+        <div class="col-md-3 coffee-grid-item text-start">
+          <h3>MINKA</h3>
+          <p>Este blend nos regala un café de gran cuerpo, con un sabor especiado. Si sos amante del café intenso, te
+            vas a enamorar de nuestro Minka.</p>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+
+  <footer>
+
+    <div class="logo-div"><img src="assets/tienda-de-cafe.png" alt="" class="logo-footer"></div>
+
+    <div>
+      <h4>CONTENIDOS</h4>
+      <a href="#home">Inicio</a>
+      <a href="">Nuestro Café</a>
+      <a href="">Locales</a>
+      <a href="">Nuestro Menú</a>
+    </div>
+
+    <div>
+      <h4>NECESITÁS AYUDA</h4>
+      <a href="">Tutoriales</a>
+      <a href="">Trabajá en TDC</a>
+      <a href="">Franquicias</a>
+      <a href="">Contacto</a>
+    </div>
+
+    <div class="text-align-center">
+      <h4>¡SUSCRIBITE PARA RECIBIR DESCUENTOS Y NOVEDADES EXCLUSIVAS</h4>
+      <input type="text" name="" placeholder="Tu nombre" id="name-form">
+      <input type="email" name="" placeholder="Tu email" id="mail-form">
+      <button class="btn">SUSCRIBIRME</button>
+      <form action="">
+        <h4>CONECTATE CON NOSOTROS</h4>
+        <a href="facebook.com"><img src="assets/facebook_2.png" alt="Logo y link a facebook" class="social-footer"></a>
+        <a href="instagram.com"><img src="assets/instagram_2.png" alt="Logo y link a Instagram"
+            class="social-footer"></a>
+      </form>
+    </div>
+
+  </footer>
+  <div class="copyright">
+    <p>© Copyright 2021 Tienda de café - Todos los derechos reservados.</p>
+    <p>Todos los logos, productos, marcas y nombres aqui utilizados son propiedad registrada.</p>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+    crossorigin="anonymous"></script>
+  <script src="js/index.js"></script>
+
+
 </body>
+
 </html>
